@@ -1,0 +1,33 @@
+[project]
+name = "video-frame-extractor"
+version = "1.0.0"
+description = "专业的视频帧提取工具 - 支持精确帧提取、批量导出、多种格式转换"
+requires-python = ">=3.8"
+dependencies = [
+    "PySide6>=6.6.0",
+    "opencv-python>=4.8.1",
+    "Pillow>=10.0.1",
+]
+
+[project.metadata]
+app_name = "Video Frame Extractor"
+version = "1.0.0"
+copyright = "© 2025 SK Studio"
+author = "SK Studio"
+email = "contact@skstudio.cn"
+description = "专业的视频帧提取工具 - 支持精确帧提取、批量导出、多种格式转换"
+website = "https://github.com/video-frame-extractor/video-frame-extractor"
+
+[project.metadata.about]
+features = [
+    "支持多种视频格式（MP4, AVI, MOV, MKV等）",
+    "精确帧提取，支持逐帧导航",
+    "批量导出为JPEG, PNG, BMP, TIFF格式",
+    "自定义输出尺寸和比例",
+    "横屏和竖屏分辨率支持",
+    "社交媒体优化尺寸预设",
+    "保持宽高比的高质量缩放"
+]
+
+[tool.uv]
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
