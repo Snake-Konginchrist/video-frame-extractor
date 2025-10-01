@@ -15,7 +15,7 @@
 
 ## 系统要求
 
-- Python 3.8+
+- Python 3.13
 - PySide6
 - OpenCV
 - Pillow

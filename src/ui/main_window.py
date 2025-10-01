@@ -9,7 +9,7 @@ import os
 from PySide6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                                QSplitter, QFrame, QFileDialog, QMessageBox)
 from PySide6.QtCore import Qt, QTimer
-from PySide6.QtGui import QDragEnterEvent, QDropEvent, QAction
+from PySide6.QtGui import QDragEnterEvent, QDropEvent, QAction, QIcon
 
 from ..core.video_processor import VideoProcessor
 from ..utils.file_utils import FileUtils
@@ -18,6 +18,7 @@ from ..utils.config_utils import ConfigUtils
 from .video_widget import VideoWidget
 from .control_panel import ControlPanel
 from .playback_controls import PlaybackControls
+from ..utils.ui_utils import get_os_specific_icon_path
 
 
 class MainWindow(QMainWindow):
@@ -35,6 +36,10 @@ class MainWindow(QMainWindow):
         
     def init_ui(self):
         """初始化用户界面"""
+        icon_path = get_os_specific_icon_path()
+        if icon_path:
+            self.setWindowIcon(QIcon(icon_path))
+            
         app_name = ConfigUtils.get_app_name()
         version = ConfigUtils.get_version()
         self.setWindowTitle(f"{app_name} v{version}")
